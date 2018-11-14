@@ -22,7 +22,6 @@ defmodule RestapiWeb.UserController do
 
   def show(conn, %{"id" => id}) do
     user = Accounts.get_user(id)
-
     if user do
       render(conn, "show.json", user: user)
     else
@@ -46,4 +45,14 @@ defmodule RestapiWeb.UserController do
       send_resp(conn, :no_content, "")
     end
   end
+
+  # defp conn_with_status(conn, nil) do
+  #   conn
+  #     |> put_status(:not_found)
+  # end
+  #
+  # defp conn_with_status(conn, _) do
+  #   conn
+  #     |> put_status(:ok)
+  # end
 end

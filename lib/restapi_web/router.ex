@@ -25,6 +25,7 @@ defmodule RestapiWeb.Router do
 
     get "/users", UserController, :index
     get "/users/:id", UserController, :show
+    post "/users", UserController, :create
     resources "/users", UserController, except: [:new, :edit]
   end
 end
